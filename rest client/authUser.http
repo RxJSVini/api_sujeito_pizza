@@ -1,0 +1,8 @@
+POST http://localhost:3333/api/session
+content-type: application/json
+
+{
+    "email":"viniciuspoa2@gmail.com",
+    "password":"minhasenha"
+}
+

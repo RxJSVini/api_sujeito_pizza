@@ -1,0 +1,6 @@
+POST http://localhost:3333/api/category
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM4OGYwMjAyLTQ0Y2ItNGYyYy05NzZlLTgwMzFkNDQwZmJkYyIsIm5hbWUiOiJWaW5pY2l1cyBQIiwiZW1haWwiOiJ2aW5pY2l1c3BvYTJAZ21haWwuY29tIiwiaWF0IjoxNjUxMTkzODUyLCJleHAiOjE2NTEyMDEwNTJ9.S8078Tqj9HNRE783J24zrrwf97keDA1fk78MUYzkzbM
+{
+    "name":"Pizzas"
+}
