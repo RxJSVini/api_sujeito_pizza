@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { ListCategoryService } from "../services/ListCategoryService";
+import { ListCategoryService } from "../services/category/ListCategoryService";
 
 class ListCategoryController {
     async handle(req: Request, res: Response) {
@@ -7,8 +7,6 @@ class ListCategoryController {
         const category = await listCategory.execute();
 
         return res.json(category);
-
-
     }
 }
 

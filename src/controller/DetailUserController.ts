@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DetailUserService } from "../services/DetailUserUserService";
+import { DetailUserService } from "../services/user/DetailUserUserService";
 
 
 class DetailUserController {

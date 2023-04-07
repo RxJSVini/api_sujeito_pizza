@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, Router } from "express";
+import { Request, Response, Router } from "express";
 import { CreateUserController } from "./controller/CreateUserController";
 import { AuthUserController } from "./controller/AuthUserController";
 import { DetailUserController } from "./controller/DetailUserController";
@@ -6,9 +6,13 @@ import { isAuthenticated } from "./middlewares/isAuthenticated";
 import { CreateCategoryController } from "./controller/CreateCategoryController";
 import { ListCategoryController } from "./controller/ListCategoryController";
 import { CreateProductController } from "./controller/CreateProductController";
-import uploadConfig from '../config/multer';
-import multer from "multer";
-
+import { CreateOrderController } from "./controller/CreateOrderController";
+import { RemoveOrderController } from "./controller/RemoveOrderController";
+import { AddItemController } from "./controller/AddItemController";
+import { RemoveItemController } from "./controller/RemoveItemController";
+import { SendOrderController } from "./controller/SendOrderController";
+import { DetailOrderService } from "./services/order/DetailOrderService";
+import { FinishOrderController } from "./controller/FinishOrderController";
 
 const routes = Router();
 
@@ -36,5 +40,15 @@ routes.get("/category", isAuthenticated, new ListCategoryController().handle);
 
 //Rota de Produtos
 routes.post("/product", isAuthenticated, new CreateProductController().handle);
+// routes.get("/category/product", isAuthenticated, new ListCategoryController().handle)
+
+//Rotas ORDER
+routes.post("/order", isAuthenticated, new CreateOrderController().handle);
+routes.delete("/order", isAuthenticated, new RemoveOrderController().handle);
+routes.post("/order/add", isAuthenticated, new AddItemController().handle);
+routes.delete("/order/remove", isAuthenticated, new RemoveItemController().handle);
+routes.put("/order/send", isAuthenticated, new SendOrderController().handle);
+routes.get("/order/detail", isAuthenticated, new DetailUserController().handle);
+routes.put("/order/finish", isAuthenticated, new FinishOrderController().handle);
 
 export { routes };

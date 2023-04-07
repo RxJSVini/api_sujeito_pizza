@@ -1,7 +1,6 @@
-import { prismaClient } from "../prisma";
+import { prismaClient } from "../../prisma";
 import { compare } from "bcryptjs";
 import { sign } from "jsonwebtoken";
-import "../../config/jwtConfig";
 import jwtConfig from "../../config/jwtConfig";
 
 
